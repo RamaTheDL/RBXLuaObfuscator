@@ -1,10 +1,10 @@
 --[[
-    Version: 1.0.5
-    Last Update: 14 / 11 / 2022 | Day / Month / Year
-]]--
+    Version: 1.0.6
+    Last Update: 29 / 01 / 2025 | Day / Month / Year
+]]
 
 --// Source
-function obfuscate(source,VarName,WaterMark)
+function obfuscate(source,VarName)
         warn("Started obfuscate")
         local Variable = VarName or "Taurus_"
         local WM
@@ -15,13 +15,15 @@ function obfuscate(source,VarName,WaterMark)
 
         local ticks = tick()
 
-        if typeof(WaterMark) == "string" and WaterMark ~= nil then
-            WM = "    "..tostring(WaterMark).." | Secure by GhostyDuckyy#7698"
-        else
-            WM = "    ".."WaterMark".." | Secure by GhostyDuckyy#7698"
-        end
-
-        WM = "--[[".."\n".. tostring(WM) .."\n".."]]--".."\n\n"
+        WM = [[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/         \/                \/
+          \_Alpha 1.0.6 ~ Nx3ul
+]]--
 
         local random_ = function(length)
             local letters = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
@@ -133,15 +135,15 @@ function obfuscate(source,VarName,WaterMark)
                 return unpack(t)
             end
 
-        local obfuscated = WM..troll_var.."; "..Loadstring.."; "..fake_code(math.random(2,4), math.random(400,600))..TableByte.."; "..[[local ]]..Variable..tostring(random_(math.random(15,20))).." = "..func[1].."("..func[2]..")".."; "..fake_code(math.random(2,4), math.random(string.len(source) / 2, string.len(source) * 2))
+        local obfuscated = "--"..WM..troll_var.."; "..Loadstring.."; "..fake_code(math.random(2,4), math.random(400,600))..TableByte.."; "..[[local ]]..Variable..tostring(random_(math.random(15,20))).." = "..func[1].."("..func[2]..")".."; "..fake_code(math.random(2,4), math.random(string.len(source) / 2, string.len(source) * 2))
         setclipboard(obfuscated)
         warn("Done obfuscate in "..tostring(tick() - ticks).." second")
     return
 end
 
 --// Module
-return function(source,CustomVarName,WaterMark)
+return function(source,CustomVarName)
     task.spawn(function()
-        obfuscate(source,CustomVarName,WaterMark)
+        obfuscate(source,CustomVarName)
     end)
 end
