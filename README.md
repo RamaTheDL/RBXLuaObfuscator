@@ -3,7 +3,7 @@ this is a modified [RBXLuaObfuscator](https://github.com/kosuke14/RBXLuaObfuscat
 
 ### Script
 ```lua
-local obfuscator = loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostDuckyy/RBXLuaObfuscator/main/source.lua"))()
+local obfuscator = loadstring(game:HttpGet("https://raw.githubusercontent.com/RamaTheDL/RBXLuaObfuscator/refs/heads/main/source.lua"))()
 
 obfuscator(
  [===[
