@@ -23,7 +23,7 @@ function obfuscate(source,VarName)
  |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
          \/     \/         \/
           \_Alpha 1.0.6 ~ Nx3ul
-]]--
+]]
 
         local random_ = function(length)
             local letters = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
@@ -135,7 +135,7 @@ function obfuscate(source,VarName)
                 return unpack(t)
             end
 
-        local obfuscated = "--"..WM..troll_var.."; "..Loadstring.."; "..fake_code(math.random(2,4), math.random(400,600))..TableByte.."; "..[[local ]]..Variable..tostring(random_(math.random(15,20))).." = "..func[1].."("..func[2]..")".."; "..fake_code(math.random(2,4), math.random(string.len(source) / 2, string.len(source) * 2))
+        local obfuscated = "--[[\n"..WM.."\n]]--"..troll_var.."; "..Loadstring.."; "..fake_code(math.random(2,4), math.random(400,600))..TableByte.."; "..[[local ]]..Variable..tostring(random_(math.random(15,20))).." = "..func[1].."("..func[2]..")".."; "..fake_code(math.random(2,4), math.random(string.len(source) / 2, string.len(source) * 2))
         setclipboard(obfuscated)
         warn("Done obfuscate in "..tostring(tick() - ticks).." second")
     return
