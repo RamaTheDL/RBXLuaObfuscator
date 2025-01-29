@@ -7,11 +7,9 @@ local obfuscator = loadstring(game:HttpGet("https://raw.githubusercontent.com/Gh
 
 obfuscator(
  [===[
-  --// Paste your source here
-  print("Hello World!")
+  --// Paste your script here
  ]===],
- "Taurus_", --// Custom Variable
- "Protected" --// WaterMark
+ "Taurus_" --// Custom Variable
 )
 ```
 **NOTE**: will be copied to clipboard after executed!
